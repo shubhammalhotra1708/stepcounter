@@ -5,13 +5,13 @@ import RingProgress from './src/components/RingProgress';
 //import useHealthData from './src/hooks/useHealthData';
 import {useState,useEffect} from 'react';
 import { AntDesign } from '@expo/vector-icons';
-import AppleHealthKit from 'react-native-health';
+import useHealthData from './src/hooks/useHealthData';
 
 const STEPS_GOAL = 10_000;
 
 export default function App() {
   // const [date, setDate] = useState(new Date());
-  // const { steps, flights, distance } = useHealthData(date);
+  const { steps, flights, distance } = useHealthData(new Date(24,5,2023));
   // const changeDate = (numDays : number) => {
   //   const currentDate = new Date(date); // Create a copy of the current date
   //   // Update the date by adding/subtracting the number of days
@@ -19,10 +19,7 @@ export default function App() {
 
   //   setDate(currentDate); // Update the state variable
   // };
-  const steps=8000;
-  const flights = 10;
-  const distance= 15;
-  AppleHealthKit.isAvailable(()=>{});
+
   
 
   return (
