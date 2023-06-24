@@ -5,6 +5,7 @@ import RingProgress from './src/components/RingProgress';
 //import useHealthData from './src/hooks/useHealthData';
 import {useState,useEffect} from 'react';
 import { AntDesign } from '@expo/vector-icons';
+import AppleHealthKit from 'react-native-health';
 
 const STEPS_GOAL = 10_000;
 
@@ -18,9 +19,11 @@ export default function App() {
 
   //   setDate(currentDate); // Update the state variable
   // };
-  const steps=6000;
+  const steps=8000;
   const flights = 10;
   const distance= 15;
+  AppleHealthKit.isAvailable(()=>{});
+  
 
   return (
     <View style={styles.container}>
