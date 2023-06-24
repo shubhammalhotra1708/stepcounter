@@ -11,7 +11,7 @@ const STEPS_GOAL = 10_000;
 
 export default function App() {
   // const [date, setDate] = useState(new Date());
-  const { steps, flights, distance } = useHealthData(new Date(24,5,2023));
+  const { steps, flights, distance } = useHealthData(new Date(2023,5,23));
   // const changeDate = (numDays : number) => {
   //   const currentDate = new Date(date); // Create a copy of the current date
   //   // Update the date by adding/subtracting the number of days

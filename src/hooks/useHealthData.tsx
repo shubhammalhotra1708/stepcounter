@@ -39,7 +39,7 @@ const useHealthData = (date : Date) => {
     }
     //date to fetch data
     const options : HealthInputOptions= {
-      date: new Date(2023,5,24).toISOString(),
+      date:date.toISOString(),
       includeManuallyAdded : false,
       //unit:HealthUnit.meter,
     }
