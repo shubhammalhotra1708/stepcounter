@@ -1,0 +1,7 @@
+npm install
+npx expo start --dev-client
+
+dev build ios : npx expo prebuild --platform ios --clean
+dev build android : npx expo prebuild --platform android --clean
+choose emulator device : npx expo run:ios -d
+
