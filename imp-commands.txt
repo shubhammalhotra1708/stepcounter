@@ -5,3 +5,5 @@ dev build ios : npx expo prebuild --platform ios --clean
 dev build android : npx expo prebuild --platform android --clean
 choose emulator device : npx expo run:ios -d
 
+if xcode error 65 : get signing again from xcode
+

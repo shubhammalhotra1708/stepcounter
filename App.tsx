@@ -1,10 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View ,Button, TouchableOpacity} from 'react-native';
 import Value from './src/components/Value';
 import RingProgress from './src/components/RingProgress';
 import {useState} from 'react';
 import { AntDesign } from '@expo/vector-icons';
 import useHealthData from './src/hooks/useHealthData';
+import DateTimePickerModal from "react-native-modal-datetime-picker";
 
 const STEPS_GOAL = 10_000;
 
@@ -18,10 +19,38 @@ export default function App() {
     setDate(currentDate); // Update the state variable
   };
 
+  const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
+
+  const showDatePicker = () => {
+    setDatePickerVisibility(true);
+  };
+
+  const hideDatePicker = () => {
+    setDatePickerVisibility(false);
+  };
+
+  const handleConfirm = (date:Date) => {
+    console.warn("A date has been picked: ", date);
+    setDate(date)
+    hideDatePicker();
+  };
+
   
 
   return (
     <View style={styles.container}>
+      <View style={{alignSelf:"flex-end"}}>
+            <AntDesign name="calendar" size={20} color="green" onPress={showDatePicker} />
+            <DateTimePickerModal
+            isVisible={isDatePickerVisible}
+            display='spinner'
+            mode="date"
+            onConfirm={handleConfirm}
+            onCancel={hideDatePicker}
+            />
+          {/* <Button title="show picker " onPress={showDatePicker} /> */}
+          
+      </View>
       <View style={styles.datePicker}>
         <AntDesign
           onPress={() => changeDate(-1)}
