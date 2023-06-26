@@ -74,5 +74,6 @@ const styles = StyleSheet.create({
     gap: 25,
     flexWrap: 'wrap',
     marginTop: 100,
+    marginHorizontal:20
   },
 });
